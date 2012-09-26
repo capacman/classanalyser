@@ -26,15 +26,12 @@ import org.apache.bcel.generic.ObjectType;
 import org.apache.bcel.generic.Type;
 import org.apache.bcel.util.ClassLoaderRepository;
 import org.apache.bcel.util.Repository;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 /**
  * Hello world!
  * 
  */
 public class App {
-	private final static Logger LOGGER = LoggerFactory.getLogger(App.class);
 
 	public static class ClassDependencyDefinition {
 		private final JavaClass javaClass;
@@ -212,7 +209,7 @@ public class App {
 			}
 			return classNames;
 		} catch (IOException e) {
-			LOGGER.error("jarFile error", e);
+			e.printStackTrace();
 			return Collections.emptyList();
 		} finally {
 			if (jarFile != null)
